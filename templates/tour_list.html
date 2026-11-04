@@ -1,0 +1,98 @@
+{% load static %}
+{% include 'layouts/header.html' %}
+
+<link rel="stylesheet" href="{% static 'css/cars.css' %}">
+
+<div class="tour-container">
+
+    <div class="tour-header">
+        <h1>🌍 Travel Start — Мир путешествий</h1>
+        <p>Открой для себя новые места вместе с нами!</p>
+    </div>
+
+    {% for i in car_list %}
+
+    <div class="tour-card">
+
+        <div class="tour-title">
+            <h2>🏔️ {{ i.title }}</h2>
+            <span>Тур №{{ forloop.counter }}</span>
+        </div>
+
+        <div class="tour-info">
+
+            <p>
+                <strong>👨‍💼 Руководитель тура:</strong>
+                {{ i.leader }}
+            </p>
+
+            {% if i.register_date %}
+            <p>
+                <strong>📅 Дата создания:</strong>
+                {{ i.register_date|date:"d.m.Y" }}
+            </p>
+            {% else %}
+            <p>Дата создания неизвестна</p>
+            {% endif %}
+
+        </div>
+
+        <div class="tour-section">
+            <h3>🗺️ Направления и категории</h3>
+
+            <ul>
+                {% for cat in i.categories.all %}
+                    <li>{{ cat.name }}</li>
+                {% empty %}
+                    <li>Категории пока не добавлены</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="tour-section">
+            <h3>👥 Участник тура</h3>
+
+            {% for person in i.person_set.all %}
+                <p>{{ person.person }}</p>
+                <small>Дата регистрации: {{ person.created_add|date:"d.m.Y" }}</small>
+            {% empty %}
+                <p>Участников пока нет</p>
+            {% endfor %}
+        </div>
+
+        <div class="tour-section">
+            <h3>⭐ Отзывы путешественников</h3>
+
+            <div class="tour-reviews">
+                {% for review in i.comment_set.all %}
+                    <div class="review">
+                        <p>{{ review.Comment }}</p>
+                        <small>
+                            {{ review.created_at|date:"d.m.Y" }}
+                        </small>
+                    </div>
+                {% empty %}
+                    <p>Отзывов пока нет. Будь первым!</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="tour-footer">
+            <span>✈️ Travel Start</span>
+            <span>Путешествуй с удовольствием!</span>
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <div class="no-tours">
+        <h2>Пока нет доступных туров</h2>
+        <p>Скоро здесь появятся новые путешествия!</p>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% include 'layouts/footer.html' %}

@@ -1,0 +1,229 @@
+
+/* Основной контейнер */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-add {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+.btn-add:hover {
+    background-color: #a50000;
+}
+
+.btn-edit {
+    background-color: #333333;
+    color: #fff;
+}
+
+.btn-edit:hover {
+    background-color: #555555;
+}
+
+.btn-delete {
+    background-color: #5c0000;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background-color: #800000;
+}
+
+.btn-submit {
+    background-color: #8b0000;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #a50000;
+}
+
+/* Заголовок страницы */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #450000;
+}
+
+.page-header h1 {
+    font-size: 26px;
+    color: #eeeeee;
+}
+
+/* Список товаров */
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    background-color: #181818;
+    border: 1px solid #3d1717;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.todo-item:hover {
+    border-color: #8b0000;
+    box-shadow: 0 4px 14px rgba(139, 0, 0, 0.25);
+}
+
+.todo-content h2 {
+    font-size: 20px;
+    color: #eeeeee;
+    margin-bottom: 10px;
+}
+
+.todo-description {
+    color: #cccccc;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.todo-description.empty {
+    color: #777777;
+    font-style: italic;
+}
+
+/* Статус товара */
+.todo-status {
+    display: inline-block;
+    background-color: #3d1111;
+    color: #ff7777;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+/* Даты */
+.todo-dates {
+    font-size: 13px;
+    color: #999999;
+    margin-bottom: 15px;
+}
+
+.todo-dates p {
+    margin-bottom: 3px;
+}
+
+/* Действия */
+.todo-actions {
+    display: flex;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid #333333;
+}
+
+/* Форма */
+.form-wrapper {
+    background-color: #181818;
+    border: 1px solid #3d1717;
+    border-radius: 10px;
+    padding: 30px 35px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.form-wrapper h1 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #eeeeee;
+}
+
+.todo-form .form-fields p {
+    margin-bottom: 18px;
+}
+
+.todo-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #dddddd;
+    font-size: 14px;
+}
+
+/* Поля ввода */
+.todo-form input[type="text"],
+.todo-form input[type="email"],
+.todo-form input[type="password"],
+.todo-form input[type="number"],
+.todo-form textarea,
+.todo-form select {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #252525;
+    color: #ffffff;
+    border: 1px solid #555555;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-form input:focus,
+.todo-form textarea:focus,
+.todo-form select:focus {
+    outline: none;
+    border-color: #a00000;
+    box-shadow: 0 0 0 3px rgba(160, 0, 0, 0.2);
+}
+
+.todo-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Кнопка отправки */
+.form-actions {
+    margin-top: 25px;
+    text-align: right;
+}
+
+/* Адаптация для телефона */
+@media (max-width: 600px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .todo-actions {
+        flex-direction: column;
+    }
+
+    .todo-actions .btn {
+        text-align: center;
+    }
+
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+}

@@ -1,0 +1,86 @@
+```html
+{% load static %}
+{% include 'layouts/header.html' %}
+
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+
+<main class="blog-detail">
+
+    <article class="blog-card">
+
+        <div class="blog-detail-header">
+            <span class="blog-label">✈️ Travel Start</span>
+            <h1 class="blog-detail-title">
+                🏔️ {{ tour_id.title }}
+            </h1>
+            <p class="blog-subtitle">
+                Открой для себя новые места вместе с нами!
+            </p>
+        </div>
+
+        <div class="blog-detail-info">
+
+            <p class="blog-detail-date">
+                👨‍💼 <strong>Руководитель тура:</strong>
+                {{ tour_id.leader }}
+            </p>
+
+            {% if tour_id.register_date %}
+                <p class="blog-detail-date">
+                    📅 <strong>Дата создания:</strong>
+                    {{ tour_id.register_date|date:"d.m.Y" }}
+                </p>
+            {% else %}
+                <p class="blog-detail-date">
+                    📅 Дата создания неизвестна
+                </p>
+            {% endif %}
+
+        </div>
+
+        <div class="blog-detail-description">
+            <h2>🌍 О путешествии</h2>
+            <p class="blog-detail-text">
+                Тур «{{ tour_id.title }}» — отличная возможность
+                познакомиться с новыми местами, насладиться природой
+                Кыргызстана и получить незабываемые впечатления.
+            </p>
+        </div>
+
+        <div class="blog-detail-categories">
+            <h2>🗺️ Категории тура</h2>
+
+            <ul>
+                {% for cat in tour_id.categories.all %}
+                    <li>{{ cat.name }}</li>
+                {% empty %}
+                    <li>Категории пока не добавлены</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="blog-detail-reviews">
+            <h2>⭐ Отзывы путешественников</h2>
+
+            {% for review in tour_id.comment_set.all %}
+                <div class="review-card">
+                    <p>{{ review.Comment }}</p>
+                    <small>
+                        📅 {{ review.created_at|date:"d.m.Y" }}
+                    </small>
+                </div>
+            {% empty %}
+                <p>Отзывов пока нет. Будь первым!</p>
+            {% endfor %}
+        </div>
+
+        <a href="/" class="blog-back-btn">
+            ← Назад к списку туров
+        </a>
+
+    </article>
+
+</main>
+
+{% include 'layouts/footer.html' %}
+```

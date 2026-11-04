@@ -1,0 +1,135 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #202020;
+    padding: 15px;
+    color: #e0e0e0;
+}
+
+/* Навигационная панель */
+.navbar {
+    background: #292929;
+    padding: 8px 0;
+    border-radius: 12px;
+    border-top: 3px solid #8b1e2d;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Список меню */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 12px;
+}
+
+/* Ссылки меню */
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #76202b, #a32939);
+    border: 1px solid #693039;
+    transition: background 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+/* Наведение на ссылку */
+.nav-link:hover {
+    background: linear-gradient(135deg, #922635, #bd3547);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(160, 35, 52, 0.25);
+}
+
+/* Нажатие на ссылку */
+.nav-link:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Футер */
+.footer {
+    background: #292929;
+    color: #e0e0e0;
+    margin: 20px 0 0;
+    padding: 20px;
+    border-radius: 12px;
+    border-bottom: 3px solid #8b1e2d;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Ссылки в футере */
+.footer-menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-link {
+    color: #d6d6d6;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+    color: #c13a49;
+    text-decoration: underline;
+}
+
+/* Копирайт */
+.footer-copy {
+    font-size: 12px;
+    color: #a5a5a5;
+    border-top: 1px solid #493034;
+    padding-top: 12px;
+    margin-top: 5px;
+}
+
+/* Адаптация для телефонов */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .navbar {
+        padding: 10px 5px;
+    }
+
+    .nav-menu {
+        gap: 6px;
+        padding: 0 5px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+        padding: 9px 12px;
+    }
+
+    .footer {
+        padding: 18px 12px;
+    }
+
+    .footer-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

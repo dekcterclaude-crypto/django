@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'layouts/header.html' %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<main class="blog-section">
+    <h1 class="blog-heading">Наш блог</h1>
+
+    <ul class="blog-list">
+        {% for i in blog %}
+        <li class="blog-item">
+            <h2 class="blog-title">{{ i.title }}</h2>
+            {% if i.created_at %}
+            <p class="blog-date">{{ i.created_at }}</p>
+            {% else %}
+             <p class="blog-date">Дата загрузки неизвестна</p>
+            {% endif %}
+            <a href="/blog_list/{{ i.id }}/" class="blog-btn">Подробнее</a>
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+{% include 'layouts/footer.html' %}

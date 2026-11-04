@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'layouts/header.html' %}
+<link rel="stylesheet" href="{% static 'css/CRUD.css' %}">
+<div class="container">
+    <div class="form-wrapper">
+        <h1>Добавить электронику</h1>
+        <form action="{% url 'create' %}" method="POST" class="todo-form">
+            {% csrf_token %}
+            <div class="form-fields">
+                {{ form.as_p }}
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-submit">
+                    Добавить товар
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% include 'layouts/footer.html' %}

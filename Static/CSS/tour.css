@@ -1,0 +1,249 @@
+
+/* ===== Базовые настройки ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f0f5f4;
+    color: #263b3b;
+    line-height: 1.6;
+}
+
+/* ===== Главный контейнер ===== */
+.tour-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* ===== Заголовок сайта ===== */
+.tour-header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #00695c, #26a69a);
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 77, 64, 0.15);
+}
+
+.tour-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.tour-header p {
+    color: #e0f2f1;
+    font-size: 1.05rem;
+}
+
+/* ===== Карточка тура ===== */
+.tour-card {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #dce8e5;
+    box-shadow: 0 4px 15px rgba(38, 59, 59, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(38, 59, 59, 0.12);
+}
+
+/* ===== Название тура ===== */
+.tour-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 15px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #26a69a;
+}
+
+.tour-title h2 {
+    font-size: 1.7rem;
+    color: #00695c;
+}
+
+.tour-title span {
+    background: #e0f2f1;
+    color: #00695c;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ===== Информация о туре ===== */
+.tour-info {
+    background: #f7faf9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+}
+
+.tour-info p {
+    margin: 7px 0;
+    color: #455a5a;
+    font-size: 0.97rem;
+}
+
+.tour-info strong {
+    color: #263b3b;
+}
+
+/* ===== Общие настройки текста ===== */
+.tour-card p {
+    overflow-wrap: anywhere;
+}
+
+.tour-section {
+    margin-top: 22px;
+}
+
+.tour-section h3 {
+    font-size: 1.15rem;
+    color: #00695c;
+    margin-bottom: 12px;
+}
+
+/* ===== Категории туров ===== */
+.tour-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    list-style: none;
+}
+
+.tour-section ul li {
+    background: #e0f2f1;
+    color: #00695c;
+    border: 1px solid #b2dfdb;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+/* ===== Участники ===== */
+.tour-section > p {
+    margin: 6px 0;
+    color: #455a5a;
+}
+
+.tour-section small {
+    display: block;
+    color: #78909c;
+    font-size: 0.82rem;
+    margin-top: 3px;
+}
+
+/* ===== Отзывы ===== */
+.tour-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.review {
+    background: #f7faf9;
+    border-left: 4px solid #26a69a;
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: background 0.2s ease;
+}
+
+.review:hover {
+    background: #eaf5f3;
+}
+
+.review p {
+    color: #374b4b;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.review small {
+    color: #78909c;
+}
+
+/* ===== Нижняя часть карточки ===== */
+.tour-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #e0e9e7;
+    margin-top: 25px;
+    padding-top: 15px;
+    color: #78909c;
+    font-size: 0.85rem;
+}
+
+.tour-footer span:first-child {
+    color: #00695c;
+    font-weight: 700;
+}
+
+/* ===== Если туров нет ===== */
+.no-tours {
+    background: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 14px;
+    border: 1px solid #dce8e5;
+}
+
+.no-tours h2 {
+    color: #00695c;
+    margin-bottom: 10px;
+}
+
+.no-tours p {
+    color: #78909c;
+}
+
+/* ===== Адаптация под телефон ===== */
+@media (max-width: 600px) {
+    .tour-container {
+        padding: 20px 10px;
+    }
+
+    .tour-header {
+        padding: 30px 15px;
+    }
+
+    .tour-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .tour-header p {
+        font-size: 0.92rem;
+    }
+
+    .tour-card {
+        padding: 17px;
+    }
+
+    .tour-title h2 {
+        font-size: 1.35rem;
+    }
+
+    .tour-section h3 {
+        font-size: 1.05rem;
+    }
+
+    .tour-footer {
+        flex-direction: column;
+    }
+}

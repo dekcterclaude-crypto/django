@@ -1,0 +1,124 @@
+/* Секция блога */
+.blog-section {
+    flex: 1;
+    padding: 30px 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Заголовок блога */
+.blog-heading {
+    font-size: 26px;
+    color: #b52b3b;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #493034;
+}
+
+/* Список карточек */
+.blog-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+    padding: 0;
+}
+
+/* Карточка статьи */
+.blog-item {
+    background: #292929;
+    border-radius: 12px;
+    padding: 20px 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    border-top: 3px solid #8b1e2d;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Эффект при наведении */
+.blog-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 30, 45, 0.16);
+}
+
+/* Заголовок карточки */
+.blog-title {
+    font-size: 18px;
+    color: #c13a49;
+    line-height: 1.4;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Дата публикации */
+.blog-date {
+    font-size: 12px;
+    color: #a5a5a5;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Кнопка «Подробнее» */
+.blog-btn {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f5f5f5;
+    text-decoration: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #76202b, #a32939);
+    border: 1px solid #96303d;
+    transition: background 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+/* Наведение на кнопку */
+.blog-btn:hover {
+    background: linear-gradient(135deg, #922635, #bd3547);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(160, 35, 52, 0.25);
+}
+
+/* Нажатие на кнопку */
+.blog-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Адаптация для телефонов */
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 20px 12px;
+    }
+
+    .blog-heading {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    .blog-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .blog-item {
+        padding: 18px 16px;
+    }
+
+    .blog-title {
+        font-size: 17px;
+    }
+
+    .blog-btn {
+        padding: 9px 15px;
+    }
+}
