@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'book',
     'tour',
     'electronica',
+    'user',
+    'captcha'
 ]
 
 MIDDLEWARE = [

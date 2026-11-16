@@ -25,6 +25,9 @@ urlpatterns = [
     path('', include('book.urls')),
     path('', include('tour.urls')),
     path('', include('electronica.urls')),
+    path('', include('user.urls')),
+    path('', include('captcha.urls')),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
