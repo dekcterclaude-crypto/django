@@ -10,4 +10,6 @@ urlpatterns = [
     path('image_django/', views.image_django_view, name='image_django'),
     path('about_me/', views.about_me_view, name='about'),
     path('contacts/', views.contacts, name='cont'),
+    path('search/', views.search_view, name='search')
 ]
+
